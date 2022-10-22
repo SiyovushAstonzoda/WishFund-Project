@@ -1,0 +1,11 @@
+@model Domain.Dtos.AddCategoryDto
+<form method="post" asp-action="Create">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id">
+        <label >Category name</label>
+        <input type="text" asp-for="Name" class="form-control">
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

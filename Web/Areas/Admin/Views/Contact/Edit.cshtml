@@ -1,0 +1,38 @@
+﻿@model Domain.Dtos.AddContactDto
+<!-- Jumbotron -->
+<div class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white"
+     style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');">
+    <h1 class="mb-3 h2">Contact</h1>
+</div>
+<!-- Jumbotron -->
+
+<form method="post" asp-action="Edit">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id">
+        <label>Contact Name</label>
+        <input asp-for="Name" type="text" class="form-control" placeholder="Enter contact name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Contact Subject</label>
+        <textarea asp-for="Subject" class="form-control" placeholder="Enter contact subject"></textarea>
+        <span asp-validation-for="Subject" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Contact Email</label>
+        <textarea asp-for="Email" class="form-control" placeholder="Enter contact email"></textarea>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Contact Phone</label>
+        <textarea asp-for="Phone" class="form-control" placeholder="Enter contact phone"></textarea>
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Contact Message</label>
+        <textarea asp-for="Message" class="form-control" placeholder="Enter contact message"></textarea>
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
