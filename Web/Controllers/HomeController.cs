@@ -10,11 +10,13 @@ public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
     private readonly ICategoryService _categoryService;
+    private readonly IContactService _contactService;
 
-    public HomeController(ILogger<HomeController> logger, ICategoryService categoryService)
+    public HomeController(ILogger<HomeController> logger, ICategoryService categoryService, IContactService contactService)
     {
         _logger = logger;
         _categoryService = categoryService;
+        _contactService = contactService;
     }
 
     public async Task<IActionResult> Index()
@@ -32,9 +34,23 @@ public class HomeController : Controller
         return View();
     }
 
+    public async Task<IActionResult> Contact()
+    {
+        ViewBag.Contacts = await _contactService.GetContacts();
+
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> Contact(AddContactDto contact)
+    {
+        ViewBag.Contacts = await _categoryService.GetCategories();
+        return View();
+    }
+
     public async Task<IActionResult> Privacy()
     {
-        ViewBag.Categories = await _categoryService.GetCategories() ;
+        ViewBag.Categories = await _contactService.GetContacts() ;
 
         return View();
     }

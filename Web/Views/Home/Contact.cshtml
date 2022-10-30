@@ -1,5 +1,4 @@
-﻿@model List<Domain.Dtos.GetContactDto>
-<!doctype html>
+﻿@model Domain.Dtos.AddContactDto
 
 <!--
  // WEBSITE: https://themefisher.com
@@ -193,7 +192,7 @@
 				<div class="container">
 					<div class="columns is-multiline">
 						<div class="column is-12">
-							<form id="contact-form" class="contact__form" method="post" action="mail.php">
+					<form id="contact-form" class="contact__form" method="post" action="Contact">
 								<span class="text-color">Send a message</span>
 								<h3 class="text-md mb-5">Contact Form</h3>
 								<!-- form message -->
@@ -208,32 +207,29 @@
 								</div>
 								<!-- end message -->
                                 <div class="columns is-multiline">
-                                @foreach (var contact in Model)
-                                {
                                     <div class="column is-6-desktop is-6-tablet">
                                         <label>Your Name *</label>
-                                        <input name="@contact.Name" type="text" class="input">
+                                        <input name="Name" type="text" class="input">
                                     </div>
                                     <div class="column is-6-desktop is-6-tablet">
                                         <label>Your Email *</label>
-                                        <input name="@contact.Email" type="email" class="input">
+                                        <input name="Email" type="email" class="input">
                                     </div>
                                     <div class="column is-6-desktop is-6-tablet">
                                         <label>Your Subject *</label>
-                                        <input name="@contact.Subject" type="text" class="input">
+                                        <input name="Subject" type="text" class="input">
                                     </div>
                                     <div class="column is-6-desktop is-6-tablet">
                                         <label>Your Phone Number *</label>
-                                        <input name="@contact.Phone" type="number" class="input" min="0">
+                                        <input name="Phone" type="number" class="input" min="0">
                                     </div>
                                     <div class="column is-12">
                                         <label>Your Message *</label>
-                                        <textarea name="@contact.Message" class="input" rows="6"></textarea>
+                                        <textarea name="Message" class="input" rows="6"></textarea>
                                     </div>
                                     <div class="column is-12">
                                         <button class="btn btn-main is-rounded" name="submit" type="submit">Send Message</button>
                                     </div>
-                                }
                                 </div>
 							</form>
 						</div>
